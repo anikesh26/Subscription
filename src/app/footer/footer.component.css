@@ -1,0 +1,17 @@
+
+.container {
+  background-color: #3f51b5;
+}
+.flex-contanier {
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.filter_design {
+  padding-left: 10px;
+  margin-bottom: 0;
+}

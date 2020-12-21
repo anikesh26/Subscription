@@ -1,0 +1,17 @@
+<app-header></app-header>
+<section>
+<div class="container" fxLayout="column">
+  <div >
+    <mat-card class="card_name" *ngFor="let SubData of list" [ngStyle]="{'background-color': SubData.color,'color': SubData.color ? 'white' : 'black'}">
+      <div (click)="onEdit(SubData)">
+      <h4>{{SubData.name}}</h4>
+    <small>{{SubData.description}}</small>
+  </div>
+  <div  fxLayoutAlign="end center" >
+    {{SubData.price}}
+  </div>
+</mat-card>
+  </div>
+</div>
+</section>
+<app-footer></app-footer>

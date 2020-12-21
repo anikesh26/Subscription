@@ -1,0 +1,10 @@
+.container {
+  background: #b9b9b9b8;
+}
+.subscription {
+  padding: 30px;
+  font-size: 30px;
+}
+.material-icons {
+  cursor: pointer;
+}

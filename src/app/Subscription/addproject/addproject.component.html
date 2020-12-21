@@ -1,0 +1,121 @@
+<div class="container">
+  <form [formGroup]="SubscriptionForm">
+    <div fxLayout="column" fxLayoutAlign="space-around stretch">
+      <div class="card price_box">
+        <div class="back_button" fxLayoutAlign="start start">
+          <button [routerLink]="['/dashboard']" class="back-button"><span class="material-icons">
+          keyboard_backspace
+          </span>
+          </button>
+      </div>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="0.00" type="number" formControlName="price"/>
+          <mat-label>INR</mat-label>
+        </mat-form-field>
+      </div>
+
+      <div
+        class="example-form"
+        fxLayout="column"
+        fxLayoutAlign="space-around stretch"
+      >
+        <mat-form-field class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" placeholder="Netflix" formControlName="name"/>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput placeholder="Ex. It makes me feel..." formControlName="description"></textarea>
+        </mat-form-field>
+      </div>
+      <mat-divider></mat-divider>
+      <mat-tab-group>
+        <mat-tab label="Recurring">
+          <table class="example-full-width" cellspacing="5">
+            <tr>
+              <th>Billing Period</th>
+            </tr>
+            <tr>
+              <td>
+                <h3>Every</h3>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <!-- <mat-label>City</mat-label> -->
+                  <input matInput type="number" placeholder="1" formControlName="billing_date"/>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field appearance="fill">
+                  <!-- <mat-label>Favorite food</mat-label> -->
+                  <mat-select value="month" formControlName="billing_period">
+                    <mat-option value="day"> Day </mat-option>
+                    <mat-option value="week"> Week </mat-option>
+                    <mat-option value="month"> Month </mat-option>
+                    <mat-option value="year"> Year </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>First Payment</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="first_payment" />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker></mat-datepicker>
+          </mat-form-field>
+        </mat-tab>
+        <mat-tab label="One time">
+          <table class="example-full-width" cellspacing="5">
+            <tr>
+         <td><mat-form-field class="example-full-width">
+          <mat-label>Expiry Date</mat-label>
+          <input matInput type="text" placeholder="e.g. in a year" formControlName="expiry_date"/>
+        </mat-form-field>
+      </td>
+      </tr>
+      </table>
+    </mat-tab>
+      </mat-tab-group>
+          <mat-divider></mat-divider>
+
+          <div class="pick_date">
+            <div class="example-full-width color_change" appearance="fill" >
+              <h4>Color</h4>
+              <!-- <input type="color" > -->
+              <button mat-raised-button (click)="openDialog()" [ngStyle]="{'background-color':animal}">Choose a nice color</button>
+            </div>
+          </div>
+
+          <div
+            class="example-form"
+            fxLayout="column"
+            fxLayoutAlign="space-around stretch"
+          >
+            <mat-form-field class="example-full-width">
+              <mat-label>Payment method</mat-label>
+              <input matInput type="text" placeholder="e.g credit" formControlName="payment_method"/>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <mat-label>Note </mat-label>
+              <textarea
+                matInput
+                placeholder="Ex. It makes me feel..." formControlName="note"
+              ></textarea>
+            </mat-form-field>
+          </div>
+          <mat-divider></mat-divider>
+
+          <div fxLayout="column" fxLayoutAlign="center center">
+            <button mat-raised-button color="primary" (click)="onSubmit()">Add Subscription</button>
+          </div>
+
+    </div>
+  </form>
+</div>

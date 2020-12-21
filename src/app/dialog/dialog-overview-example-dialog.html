@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Choose a color</h1>
+<div mat-dialog-content *ngIf="!custom_Color">
+  <!-- <p>What's your favorite animal?</p> -->
+  <!-- <mat-form-field>
+    <mat-label>Favorite Animal</mat-label>
+    <input matInput [(ngModel)]="data.animal">
+    </mat-form-field> -->
+    <color-circle color="#fff" (onChangeComplete)="handleChangeComplete($event)"></color-circle>
+</div>
+<div mat-dialog-content *ngIf="custom_Color">
+  <!-- <p>What's your favorite animal?</p> -->
+  <!-- <mat-form-field> -->
+    <!-- <mat-label>Favorite Animal</mat-label> -->
+    <!-- <input matInput [(ngModel)]="data.animal"> -->
+    <color-chrome color="#fff" (onChangeComplete)="handleChangeComplete($event)" ></color-chrome>
+  <!-- </mat-form-field> -->
+</div>
+<div mat-dialog-actions>
+  <button mat-button *ngIf="!custom_Color" (click)="onNoClick()">Custom</button>
+  <button mat-button *ngIf="custom_Color" (click)="onBack()">back</button>
+
+  <!-- <button mat-button (click)="submitColor()"  cdkFocusInitial>Select</button> -->
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Select</button>
+
+
+</div>

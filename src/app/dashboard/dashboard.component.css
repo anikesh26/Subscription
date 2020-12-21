@@ -1,0 +1,10 @@
+section {
+  height: 100vh;
+  background: cadetblue;
+}
+.container {
+  padding: 20px;
+}
+.card_name {
+  margin-bottom: 20px;
+}

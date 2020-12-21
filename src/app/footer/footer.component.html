@@ -1,0 +1,95 @@
+
+  <!-- <mat-sidenav-container fxFlexFill class="example-container">
+
+    <mat-sidenav #sidenav fxLayout="column">
+
+      <div fxLayout="column">
+
+        <a (click)="sidenav.toggle()" mat-button>Close</a>
+
+        <a href="#" mat-button>Menu Item 1</a>
+
+        <a href="#" mat-button>Menu Item 2</a>
+
+        <a href="#" mat-button>Menu Item 3</a>
+
+        <a href="#" mat-button>Menu Item 4</a>
+
+        <a href="#" mat-button>Menu Item 5</a>
+
+        <a href="#" mat-button>Menu Item 6</a>
+
+      </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content fxFlexFill>Main content</mat-sidenav-content>
+
+  </mat-sidenav-container> -->
+
+
+<footer class="container">
+  <div fxLayout="row" class="flex-container">
+  <mat-toolbar color="primary">
+  <button mat-icon-button class="menu_icon" [matMenuTriggerFor]="menu">
+    <mat-icon >menu</mat-icon>
+
+    <!-- <mat-icon (click)="sidenav.toggle()">menu</mat-icon> -->
+  </button>
+
+  <!-- <button mat-button [matMenuTriggerFor]="aboveMenu">Above</button> -->
+<mat-menu #aboveMenu="matMenu" yPosition="above">
+  <h2 class="filter_design" mat-menu>Options</h2>
+  <button mat-menu-item>Show time untill next Payment</button>
+  <button mat-menu-item>Show labels</button>
+  <button mat-menu-item>Default Currency: INR</button>
+  <button mat-menu-item>Dark mode disabled</button>
+  <button mat-menu-item>Backup</button>
+  <button mat-menu-item>Leave Feedback</button>  
+</mat-menu>
+
+<mat-menu #menu="matMenu">
+  <h2 class="filter_design" mat-menu>Options</h2>
+
+  <button mat-menu-item>
+    <mat-icon>access_time</mat-icon>
+    <span>Show time untill next Payment</span>
+  </button>
+  <button mat-menu-item >
+    <mat-icon>voicemail</mat-icon>
+    <span>Show labels</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>notifications_off</mat-icon>
+    <span>Disable alerts</span>
+  </button>
+</mat-menu>
+
+  <span class="spacer"></span>
+
+  <div class="add-button">
+    <button mat-mini-fab routerLink="/addSubscription">
+      <mat-icon>add</mat-icon>
+    </button>
+
+  </div>
+  <span class="spacer"></span>
+  <button mat-icon-button class="filter_icon" [matMenuTriggerFor]="filterMenu">
+    <mat-icon>filter_list</mat-icon>
+  </button>
+  <mat-menu #filterMenu="matMenu" yPosition="above">
+    <h2 class="filter_design">Filter By</h2>
+    <button mat-menu-item>Filter By</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+  <button mat-icon-button class="sort_icon" [matMenuTriggerFor]="sortMenu">
+    <mat-icon>sort</mat-icon>
+  </button>
+  <mat-menu #sortMenu="matMenu" yPosition="above"> 
+    <button mat-menu-item>Sort By</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+</mat-toolbar>
+</div>
+</footer>
+

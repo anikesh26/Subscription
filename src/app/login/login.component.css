@@ -1,0 +1,23 @@
+.container {
+  background: azure;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+mat-card {
+  width: 430px;
+}
+
+mat-form-field {
+  display: block;
+}
+form {
+
+  margin-bottom: 30px;
+}
+.clickRegister {
+  padding: 20px 0 0 ;
+}

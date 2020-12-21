@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "subscriptiondemo-aeed6": {
+      "hosting": {
+        "SubscriptionProject": [
+          "subscriptiondemo-aeed6"
+        ]
+      }
+    }
+  }
+}
